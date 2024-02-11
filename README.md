@@ -1,3 +1,6 @@
+Serverless functions:
+  Leveraging serverless functions in this application based on Google Calendar can lead to improved efficiency, scalability, and flexibility.
+
 Feature 2: Show/Hide Event Details
 
   Scenario 1: An event element is collapsed by default
