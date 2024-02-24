@@ -1,20 +1,21 @@
 import { render } from '@testing-library/react';
-import EventList from '../components/EventList';
+import App from '../App';
 
-describe('<EventList /> component', () => {
-  let EventListComponent;
+describe('<App /> component', () => {
+  let AppDOM;
   beforeEach(() => {
-    EventListComponent = render(<EventList />);
+    AppDOM = render(<App />).container.firstChild;
   })
 
-  test('has an element with "list" role', () => {
-    expect(EventListComponent.queryByRole("list")).toBeInTheDocument();
+  test('renders list of events', () => {
+    expect(AppDOM.querySelector('#event-list')).toBeInTheDocument();
   });
 
-  test('renders correct number of events', () => {
-    EventListComponent.rerender(<EventList events={
-      [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }]
-    } />);
-    expect(EventListComponent.getAllByRole("listitem")).toHaveLength(4);
+  test('renders CitySearch', () => {
+    expect(AppDOM.querySelector('#city-search')).toBeInTheDocument();
+  });
+
+  test('render NumberOfEvents', () => {
+    expect(AppDOM.querySelector('#number-of-events')).toBeInTheDocument();
   });
 });
