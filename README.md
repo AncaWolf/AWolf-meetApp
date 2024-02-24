@@ -13,7 +13,7 @@ Feature 2: Show/Hide Event Details
       When I view the details of an event
       Then the event details should be collapsed
 
-  Scenario 2:
+  Scenario 2: User can expand an event to see details.
 
     User story:
       As a user of the events app, I want the ability to expand an event to view its details effortlessly. When I come across an event that piques my interest, I should be able to select it and see all the relevant information about the event. This feature enhances my experience by allowing me to access detailed event information on-demand, ensuring I have a comprehensive understanding of events I find intriguing.
