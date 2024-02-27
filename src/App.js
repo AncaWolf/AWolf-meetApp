@@ -25,9 +25,6 @@ const App = () => {
     setEvents(filteredEvents.slice(0, currentNOE));
     setAllLocations(extractLocations(allEvents));
   }
-  //  useEffect(() => {
-  //     fetchData();
-  //   }, []); 
 
   return (
     <div className="App">
