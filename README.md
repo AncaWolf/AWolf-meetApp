@@ -10,7 +10,7 @@ Feature 2: Show/Hide Event Details
 
     Gherkin Syntax:
       Given the events app is open
-      When I view the details of an event
+      When I view the list of events
       Then the event details should be collapsed
 
   Scenario 2: User can expand an event to see details.
@@ -22,33 +22,28 @@ Feature 2: Show/Hide Event Details
       Given the events app is open
       When the user selects an event to view details
       Then the event details should be expanded
-      And the user should be able to see all relevant information about the event
-
+      
   Scenario 3: User can collapse an event to hide details.
 
     User story:
       As a user of the events app, I desire the ability to collapse the details of an event at my discretion. This feature allows me to manage the level of information displayed, providing a cleaner and more focused view of the events. When I've reviewed the details of an event and no longer need them, I want the option to collapse the information, ensuring a more streamlined and organized user interface. This capability enhances my control over the displayed content, enabling a more tailored and efficient user experience.
 
     Gherkin Syntax:
-      Given the events app is open
-      And the event details are expanded for a selected event
+      Given the event details are expanded for a selected event
       When the user chooses to collapse the event details
       Then the event details should be hidden
-      And the user should have a more concise view of the events
 
 Feature 3: Specify Number of Events
 
-  Scenario 1: When user hasn’t specified a number, 32 events are shown by default
+  Scenario 1: When user has not specified a number, 32 events are shown by default
 
     User story:
       As a user of the events app, I want a default number of events to be displayed when I haven't specified a particular quantity. The app should intuitively show 32 events by default, ensuring that I have a substantial and varied list of events readily available for exploration. This default behavior simplifies the process for users who may not have a specific preference, offering a well-balanced selection of events to browse through without the need for explicit input.
 
     Gherkin Syntax:
-      Default number of events when the user hasn't specified a number
       Given the events app is open
-      When the user doesn't specify a number of events to display
+      When the user does not specify a number of events to display
       Then 32 events should be shown by default
-      And the user can browse through the list of default events
 
     Scenario 2: User can change the number of events displayed.
 
@@ -57,10 +52,8 @@ Feature 3: Specify Number of Events
         
       Gherkin Syntax:
         Given the events app is open
-        And there are events available
         When the user specifies a different number of events to display
         Then the app should show the specified number of events
-        And the user can browse through the updated list of events
 
 Feature 4: Use the App When Offline
 
