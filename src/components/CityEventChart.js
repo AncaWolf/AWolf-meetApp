@@ -12,17 +12,29 @@ const CityEventChart = ({ allLocations, events }) => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
+        const getData = () => {
+            const data = allLocations.map((location) => {
+                const count = events.filter((event) => event.location === location).length;
+                const city = location.split(/, | - /)[0];
+                return { city, count };
+            });
+            return data;
+        };
         setData(getData());
-    }, [`${data}`]);
+    }, [allLocations, events]);
 
-    const getData = () => {
-        const data = allLocations.map((location) => {
-            const count = events.filter((event) => event.location === location).length
-            const city = location.split((/, | - /))[0]
-            return { city, count };
-        })
-        return data;
-    };
+    // useEffect(() => {
+    //     setData(getData());
+    // }, [`${data}`]);
+
+    // const getData = () => {
+    //     const data = allLocations.map((location) => {
+    //         const count = events.filter((event) => event.location === location).length
+    //         const city = location.split((/, | - /))[0]
+    //         return { city, count };
+    //     })
+    //     return data;
+    // };
 
     return (
         <ResponsiveContainer width="99%" height={400}>
